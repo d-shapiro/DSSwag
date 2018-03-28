@@ -2,6 +2,9 @@ import subprocess, shutil
 from os import listdir
 from os.path import isfile, join
 
+CODEGEN_V2 = 'swagger-codegen-cli-2.2.1.jar'
+CODEGEN_V3 = 'swagger-codegen-cli-3.0.0.jar'
+
 def getopts(argv):
     opts = {}  # Empty dictionary to store key-value pairs.
     while argv:  # While there are arguments left to parse...
@@ -21,7 +24,12 @@ def main(args):
             out = out + '/'
     out = out + 'temp'
 
-    subprocess.call(['java', '-jar', 'swagger-codegen-cli-2.2.1.jar', 'generate', '-i', inp, '-o', out, '-l', 'java'])
+    codegen = CODEGEN_V2
+    if '-v' in args:
+        if '3' in args['-v']:
+            codegen = CODEGEN_V3
+
+    subprocess.call(['java', '-jar', codegen, 'generate', '-i', inp, '-o', out, '-l', 'java'])
 
     shutil.copytree(out + "/docs", out[:-4] + "docs")
     shutil.copytree(out + "/src", out[:-4] + "src")
