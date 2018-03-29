@@ -2,7 +2,7 @@ import subprocess, shutil
 from os import listdir
 from os.path import isfile, join
 
-CODEGEN_V2 = 'swagger-codegen-cli-2.2.1.jar'
+CODEGEN_V2 = 'swagger-codegen-cli-2.3.1.jar'
 CODEGEN_V3 = 'swagger-codegen-cli-3.0.0.jar'
 
 def getopts(argv):

@@ -18,4 +18,4 @@ Generates a DSLink for a REST API from an OpenAPI document, using swagger codege
 
 ### Swagger Codegen Version
 
-By default, this project uses the current stable version of swagger codegen (2.2.1). However, this version only supports version 2 of OpenAPI. If you set the flag `-v 3`, it'll use a beta version (3.0.0-20180323.182452-44) of the codegen, which is supposed to support OpenAPI 3. 
+By default, this project uses the current stable version of swagger codegen (2.3.1). However, this version only supports version 2 of OpenAPI. If you set the flag `-v 3`, it'll use a beta version (3.0.0-20180323.182452-44) of the codegen, which is supposed to support OpenAPI 3.
